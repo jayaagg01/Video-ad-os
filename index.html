@@ -1,937 +1,827 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Ad Creation — Playbook Workbook</title>
-    <!-- Tailwind CSS -->
+    <title>AI Video Ad Kit — Create Product Videos in 30 Mins for ₹499</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        notion: {
-                            bg: '#0f172a',
-                            sidebar: '#1e293b',
-                            card: '#1e293b',
-                            border: '#334155',
-                            hover: '#334155',
-                            accent: '#3b82f6',
-                            textPrimary: '#f8fafc',
-                            textSecondary: '#94a3b8'
-                        }
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            accent: '#10b981',
+                            gold: '#f59e0b',
+                            dark: '#0b0f19',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(99, 102, 241, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(99, 102, 241, 0.8)' }
+                        }
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .code-font { font-family: 'JetBrains Mono', monospace; }
-        
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
-
-        .toast-notification {
-            animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+            color: #f3f4f6;
         }
-        @keyframes slideUp {
-            from { transform: translateY(100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .gradient-text {
+            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .notion-callout {
-            border-left: 3px solid #3b82f6;
-            background: rgba(30, 41, 59, 0.6);
+        .gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .chapter-card {
-            transition: all 0.2s ease-in-out;
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .chapter-card:hover {
-            border-color: #475569;
+        .glass-card-hover:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.25);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white pb-20 md:pb-0">
 
-    <!-- HEADER NAVBAR -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-40 backdrop-blur-md bg-slate-900/90">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/20">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
-                <div>
-                    <h1 class="font-extrabold text-base text-slate-100 tracking-tight flex items-center gap-2">
-                        AI Video Ad Creation
-                        <span class="text-[10px] bg-blue-500/20 text-blue-400 font-semibold px-2 py-0.5 rounded border border-blue-500/30">Master Playbook</span>
-                    </h1>
-                    <p class="text-xs text-slate-400">Master Workbook • Zero-API • Step-by-Step Blueprint</p>
-                </div>
-            </div>
-
-            <!-- Global Action Controls -->
-            <div class="flex items-center gap-2 text-xs">
-                <button onclick="resetAllProgress()" class="bg-slate-800 hover:bg-rose-950/40 text-slate-400 hover:text-rose-300 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-rose-800/50 transition flex items-center gap-1.5 font-medium">
-                    <i class="fa-solid fa-rotate-right"></i> Reset Progress
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
-
-        <!-- WORKBOOK DASHBOARD SUMMARY -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative overflow-hidden shadow-2xl">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
-                <div class="space-y-2 max-w-2xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-                        <i class="fa-solid fa-shield-halved"></i> 100% Free • No API Keys Required • Self-Paced Playbook
-                    </div>
-                    <h2 class="text-2xl font-black text-white tracking-tight">
-                        The Zero-Cost AI Video Ad Playbook
-                    </h2>
-                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                        Learn how to create high-converting 16s/20s vertical video ads for Digital Products, E-Commerce, or Services without hiring actors, buying camera gear, or paying subscription fees.
-                    </p>
-                </div>
-
-                <!-- Overall Progress Gauge -->
-                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 min-w-[240px] space-y-3">
-                    <div class="flex items-center justify-between text-xs">
-                        <span class="font-bold text-slate-300 uppercase tracking-wider">Playbook Completion</span>
-                        <span id="progressPercent" class="font-extrabold text-emerald-400 text-sm">0%</span>
-                    </div>
-                    <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
-                        <div id="progressBar" class="bg-emerald-500 h-full w-[0%] transition-all duration-500"></div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-slate-400">
-                        <span id="chaptersCompletedText">0 of 8 Chapters Done</span>
-                        <span id="checklistTasksText">0/28 Checkpoints</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEARCH AND FILTER TOOLBAR -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
-            <!-- Search Bar -->
-            <div class="relative w-full sm:w-80">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
-                <input type="text" id="chapterSearch" oninput="filterChapters()" placeholder="Search topics, prompts, tools..." class="w-full bg-slate-950 text-xs text-slate-200 pl-9 pr-3 py-2 rounded-lg border border-slate-800 focus:outline-none focus:border-blue-500 font-medium">
-            </div>
-
-            <!-- Filter Status Tabs -->
-            <div class="flex items-center gap-1 text-xs w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
-                <button onclick="setChapterFilter('all')" id="filter-all" class="filter-btn px-3 py-1.5 rounded-lg font-semibold bg-blue-600 text-white">All Chapters</button>
-                <button onclick="setChapterFilter('completed')" id="filter-completed" class="filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white hover:bg-slate-800">Completed</button>
-                <button onclick="setChapterFilter('pending')" id="filter-pending" class="filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white hover:bg-slate-800">In Progress</button>
-            </div>
-        </div>
-
-        <!-- PLAYBOOK CHAPTERS LIST -->
-        <div id="chaptersContainer" class="space-y-5">
-
-            <!-- CHAPTER 1 -->
-            <div id="chapter-1" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <!-- Chapter Header -->
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(1)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-1" onchange="toggleChapterComplete(1, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">Chapter 1</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 8 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-blue-400 transition">Ad Strategy & Competitor Script Spying</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Uncovering high-performing ad hooks and extracting winning competitor copy for free.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-1" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <!-- Chapter Body -->
-                <div id="body-ch-1" class="chapter-body space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-blue-400 flex items-center gap-2">
-                            <i class="fa-solid fa-lightbulb"></i> Core Playbook Strategy
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            Never guess what script works. Use Meta Ad Library to find competitor ads running active for over 30 days. Active duration indicates profitability.
-                        </p>
-                    </div>
-
-                    <!-- Step-by-Step Implementation -->
-                    <div class="space-y-2 text-xs">
-                        <h4 class="font-bold text-slate-200 flex items-center gap-2">
-                            <i class="fa-solid fa-list-check text-emerald-400"></i> Execution Protocol
-                        </h4>
-                        <ol class="list-decimal pl-5 space-y-1.5 text-slate-300">
-                            <li>Go to <strong>Meta Ad Library</strong> (facebook.com/ads/library) and select your target region.</li>
-                            <li>Search by niche keywords (e.g. "Vitamin C Serum", "SaaS Tool", "Fitness Coaching").</li>
-                            <li>Filter by "Active Ads" and sort to spot ads that have been running for <strong>30+ consecutive days</strong>.</li>
-                            <li>Copy the ad link and open <strong>Downsub</strong> or a transcription app to extract the spoken voiceover script.</li>
-                        </ol>
-                    </div>
-
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-1-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Search Meta Ad Library for 3 direct niche competitors</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-1-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Identify ads running active for &gt;30 days</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-1-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Extract transcript scripts from top 3 performing videos</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Notes Section -->
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Competitor Script Links:</label>
-                        <textarea id="note-ch-1" oninput="saveNotes(1)" rows="2" placeholder="Jot down links or competitor script hooks..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CHAPTER 2 -->
-            <div id="chapter-2" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(2)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-2" onchange="toggleChapterComplete(2, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Chapter 2</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 10 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-emerald-400 transition">The 16s/20s Frame Split Framework</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Structuring high-converting vertical ads into 2 distinct visual frames with zero filler words.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-2" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <div id="body-ch-2" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-emerald-400 flex items-center gap-2">
-                            <i class="fa-solid fa-stopwatch"></i> The Word Count Limit Rule
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            Keep spoken text under <strong>38 total words</strong> for a 16-second ad. Speak clearly and leave natural pauses so viewers digest the offer without feeling rushed.
-                        </p>
-                    </div>
-
-                    <!-- Frame Breakdown Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-1.5">
-                            <div class="font-bold text-blue-400">Frame 1 (0s to 8s) — The Hook & Problem</div>
-                            <p class="text-slate-300 leading-relaxed">
-                                Address the specific frustration or pain point. Maximum 18 words. Call out target audience immediately.
-                            </p>
-                        </div>
-                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-1.5">
-                            <div class="font-bold text-emerald-400">Frame 2 (8s to 16s) — Solution & Offer</div>
-                            <p class="text-slate-300 leading-relaxed">
-                                Introduce product as the instant remedy and showcase the discount or call-to-action. Maximum 18 words.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-2-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Draft Frame 1 voiceover under 18 words</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-2-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Draft Frame 2 voiceover under 18 words</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-2-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Perform spoken word time test (under 16 seconds)</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Script Drafts:</label>
-                        <textarea id="note-ch-2" oninput="saveNotes(2)" rows="2" placeholder="Write your Frame 1 and Frame 2 script ideas..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CHAPTER 3 -->
-            <div id="chapter-3" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(3)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-3" onchange="toggleChapterComplete(3, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">Chapter 3</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 12 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-purple-400 transition">Photorealistic AI Model Prompting</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Generating 1080x1350 vertical imagery of models holding products using Flux.1 or ChatGPT.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-3" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <div id="body-ch-3" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-purple-400 flex items-center gap-2">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Construction Secret
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            Specify everyday realistic elements: "soft morning natural window light", "subtle skin texture", "authentic unposed smile", and "holding product with natural hand gesture".
-                        </p>
-                    </div>
-
-                    <!-- Prompt Code Copy Block -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-purple-300">Master Flux.1 / ChatGPT Image Prompt Template</span>
-                            <button onclick="copyText('promptTemplate1')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded flex items-center gap-1">
-                                <i class="fa-solid fa-copy"></i> Copy
-                            </button>
-                        </div>
-                        <p id="promptTemplate1" class="code-font text-xs text-slate-300 bg-slate-900 p-3 rounded-lg border border-slate-800 leading-relaxed">
-Photorealistic 8k vertical 1080x1350 portrait of a relatable woman in her late 20s holding [Product Bottle Name], clean neutral aesthetic backdrop, authentic skin texture, soft natural morning window lighting, commercial ad photography style --ar 4:5
-                        </p>
-                    </div>
-
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-3-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Select target demographic matching ideal buyer persona</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-3-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Generate 3 portrait options using Flux.1 or Bing Image Creator</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-3-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Select image with clear product placement and natural hands</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Model Prompts:</label>
-                        <textarea id="note-ch-3" oninput="saveNotes(3)" rows="2" placeholder="Save your custom prompts and image links..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CHAPTER 4 -->
-            <div id="chapter-4" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(4)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-4" onchange="toggleChapterComplete(4, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Chapter 4</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 9 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-amber-400 transition">Google Flow & Video Motion Generation</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Converting static images into fluid 8-second video clips without visual distortion.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-4" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <div id="body-ch-4" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-amber-400 flex items-center gap-2">
-                            <i class="fa-solid fa-video"></i> Preventing Motion Glitches
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            Use subtle camera prompt cues: "slow pan inward", "gentle eye blink", "subtle smile transition". Avoid asking for rapid movements or multi-person action to maintain 100% video realism.
-                        </p>
-                    </div>
-
-                    <!-- Motion Prompt Code Block -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-amber-300">Google Flow Motion Prompt Template</span>
-                            <button onclick="copyText('motionTemplate1')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded flex items-center gap-1">
-                                <i class="fa-solid fa-copy"></i> Copy
-                            </button>
-                        </div>
-                        <p id="motionTemplate1" class="code-font text-xs text-slate-300 bg-slate-900 p-3 rounded-lg border border-slate-800 leading-relaxed">
-8-second video clip: Model holding product, smooth slow camera pan forward, subtle eye blink, gentle transition from contemplative look to a warm confident smile.
-                        </p>
-                    </div>
-
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-4-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Upload static image into video generator (Google Flow / Luma)</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-4-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Apply subtle motion prompt (pan, zoom, blink)</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-4-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Download exported 8-second MP4 video clips for Frame 1 & Frame 2</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Motion Prompts:</label>
-                        <textarea id="note-ch-4" oninput="saveNotes(4)" rows="2" placeholder="Note video motion settings and export links..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CHAPTER 5 -->
-            <div id="chapter-5" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(5)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-5" onchange="toggleChapterComplete(5, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">Chapter 5</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 11 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-rose-400 transition">Canva Editing, Captions & Audio Assembly</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Assembling 1080x1920 Reel layouts with high-contrast yellow captions and background music.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-5" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <div id="body-ch-5" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-rose-400 flex items-center gap-2">
-                            <i class="fa-solid fa-sliders"></i> Audio & Caption Hierarchy Rules
-                        </div>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-300">
-                            <li><strong>Voiceover Volume:</strong> Set to 100% volume.</li>
-                            <li><strong>Background Music:</strong> Lower to 8-12% so voice speech remains crystal clear.</li>
-                            <li><strong>Subtitles:</strong> Heavy bold sans-serif font in bright yellow (#FFDF00) with subtle dark drop shadow.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-5-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Create a 1080x1920 vertical Reel canvas in Canva</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-5-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Sequence Frame 1 video (0-8s) and Frame 2 video (8-16s)</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-5-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Overlay bold yellow captions centered on screen</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-5-4" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Export finished 16-second MP4 video</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes:</label>
-                        <textarea id="note-ch-5" oninput="saveNotes(5)" rows="2" placeholder="Record font choices or audio settings..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CHAPTER 6 -->
-            <div id="chapter-6" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(6)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-6" onchange="toggleChapterComplete(6, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">Chapter 6</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 10 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-cyan-400 transition">Free GitHub Landing Page Hosting Setup</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Hosting custom high-converting HTML sales pages with zero monthly server or Shopify costs.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-6" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <div id="body-ch-6" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-cyan-400 flex items-center gap-2">
-                            <i class="fa-brands fa-github"></i> Zero-Cost Hosting Workflow
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            Upload your single-file HTML landing page into a public GitHub repository. Enable **GitHub Pages** in repository settings to get a free instant SSL web link.
-                        </p>
-                    </div>
-
-                    <!-- Code Snippet -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-cyan-300">Lightweight HTML Offer Page Template</span>
-                            <button onclick="copyText('htmlLandingTemplate')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded flex items-center gap-1">
-                                <i class="fa-solid fa-copy"></i> Copy HTML
-                            </button>
-                        </div>
-                        <textarea id="htmlLandingTemplate" readonly rows="4" class="code-font w-full text-xs text-cyan-300 bg-slate-900 p-3 rounded-lg border border-slate-800 focus:outline-none">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Offer Today</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-white font-sans">
-    <div class="max-w-md mx-auto p-4 space-y-6 text-center">
-        <div class="bg-blue-600 text-xs font-bold py-1 px-3 rounded-full inline-block">FLAT 50% OFF TODAY</div>
-        <h1 class="text-2xl font-extrabold">Your Product Title Here</h1>
-        <a href="#" class="block w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-sm shadow-lg">CLAIM YOUR DISCOUNT NOW</a>
+    <!-- Sticky Top Urgency Bar -->
+    <div class="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 text-xs md:text-sm font-medium py-2 px-4 text-center text-indigo-100 border-b border-indigo-500/20 flex justify-center items-center gap-2">
+        <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2 py-0.5 rounded-full border border-emerald-500/30 font-semibold uppercase tracking-wider">Launch Price</span>
+        <span>Get the complete AI Video Ad Kit today for just <strong>₹499</strong> (Save ₹2,500)</span>
+        <span class="hidden md:inline text-indigo-300">• One-Time Payment</span>
     </div>
-</body>
-</html>
-                        </textarea>
-                    </div>
 
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-6-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Copy lightweight single-file HTML landing page template</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-6-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Create GitHub repository and upload index.html file</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-6-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Enable GitHub Pages and publish live URL</span>
-                            </label>
-                        </div>
-                    </div>
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-28 overflow-hidden">
+        <!-- Ambient background glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Live Page URL:</label>
-                        <textarea id="note-ch-6" oninput="saveNotes(6)" rows="2" placeholder="Paste your live GitHub Pages link here..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            
+            <!-- Hero Pill Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs sm:text-sm text-slate-300 mb-6 shadow-inner">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-medium text-slate-200">New 2026 AI Prompt System</span>
+                <span class="text-slate-500">|</span>
+                <span class="text-indigo-400 font-semibold">Zero Experience Needed</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
+                Create Professional Product Videos With AI — <span class="gradient-text">Without Hiring a Video Editor</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8 font-normal">
+                Turn your product into a ready-to-publish video ad using a simple AI-powered system — even if you've never learned professional video editing.
+            </p>
+
+            <!-- Feature Tags Grid -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 text-xs sm:text-sm font-medium text-slate-300">
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-xmark text-red-400"></i> No Camera
+                </span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-xmark text-red-400"></i> No Studio
+                </span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-xmark text-red-400"></i> No Video Editor
+                </span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-xmark text-red-400"></i> No Editing Skills
+                </span>
+            </div>
+
+            <!-- Formula Banner -->
+            <div class="inline-block p-1 rounded-2xl bg-gradient-to-r from-indigo-500/30 via-emerald-500/30 to-indigo-500/30 mb-10 max-w-full">
+                <div class="bg-slate-900 px-4 sm:px-8 py-3 rounded-xl border border-slate-800 text-xs sm:text-sm md:text-base font-semibold text-slate-200">
+                    Just <span class="text-white underline decoration-indigo-500 decoration-2 font-bold">Your Product</span> + <span class="text-indigo-400 font-bold">AI</span> + <span class="text-emerald-400 font-bold">The AI Video Ad Kit</span>
                 </div>
             </div>
 
-            <!-- CHAPTER 7 -->
-            <div id="chapter-7" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(7)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-7" onchange="toggleChapterComplete(7, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">Chapter 7</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 8 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-indigo-400 transition">Meta Advantage+ Campaign Setup</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Broad targeting and creative-led AI optimization on Feeds and Reels.</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-7" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
+            <!-- Main CTA Box -->
+            <div class="glass-card max-w-md mx-auto p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-800 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg border-l border-b border-emerald-500/20">
+                    Instant Digital Delivery
                 </div>
 
-                <div id="body-ch-7" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-indigo-400 flex items-center gap-2">
-                            <i class="fa-brands fa-meta"></i> Creative-Led Targeting Strategy
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            Avoid interest stacking or complex audience targeting. Set broad demographic targeting (age & gender) and let Meta's AI match your video content to ideal buyers.
-                        </p>
+                <div class="text-left mb-5">
+                    <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-1">Get The Complete Kit</div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl sm:text-4xl font-extrabold text-white">₹499</span>
+                        <span class="text-slate-500 text-sm line-through">₹2,999</span>
+                        <span class="text-emerald-400 text-xs font-bold bg-emerald-500/10 px-2 py-0.5 rounded">83% OFF</span>
                     </div>
+                </div>
 
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-7-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Set up Advantage+ Shopping Campaign in Meta Ads Manager</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-7-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Upload 16-second vertical Reel ad</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-7-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Add 2 primary text options and 3 headlines</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-7-4" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Publish campaign with initial daily test budget ($5 - $20/day)</span>
-                            </label>
-                        </div>
-                    </div>
+                <a href="#checkout-section" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-0.5 active:translate-y-0">
+                    <i class="fa-solid fa-bolt text-yellow-300"></i>
+                    <span>GET THE AI VIDEO AD KIT</span>
+                </a>
 
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Campaign Metrics:</label>
-                        <textarea id="note-ch-7" oninput="saveNotes(7)" rows="2" placeholder="Record campaign IDs, ROAS goals, or budget notes..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
+                <div class="flex items-center justify-center gap-4 mt-4 text-xs text-slate-400 font-medium">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-400"></i> One-time payment</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-indigo-400"></i> Instant access</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-user text-purple-400"></i> Beginner-friendly</span>
                 </div>
             </div>
 
-            <!-- CHAPTER 8 -->
-            <div id="chapter-8" class="chapter-card bg-slate-900 border border-slate-800 rounded-2xl p-5 md:p-6 space-y-4" data-status="pending">
-                <div class="flex items-start justify-between gap-4 cursor-pointer" onclick="toggleChapterBody(8)">
-                    <div class="flex items-start gap-3.5">
-                        <input type="checkbox" id="chk-ch-8" onchange="toggleChapterComplete(8, event)" class="w-5 h-5 mt-0.5 rounded border-slate-700 text-blue-600 focus:ring-0 cursor-pointer">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-yellow-400 bg-yellow-500/10 px-2 py-0.5 rounded border border-yellow-500/20">Chapter 8</span>
-                                <span class="text-[11px] text-slate-400"><i class="fa-regular fa-clock"></i> 7 min read</span>
-                            </div>
-                            <h3 class="text-base font-bold text-white mt-1 hover:text-yellow-400 transition">Rapid Hook A/B Testing & Scaling Matrix</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Combating ad fatigue by swapping Frame 1 hooks while keeping Frame 2 solution intact.</p>
-                        </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION: Your Product Deserves Better -->
+    <section id="why-video" class="py-16 md:py-24 bg-slate-900/60 border-y border-slate-800 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Your Product Deserves Better Than Another <span class="text-red-400">Static Image</span>
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg">
+                    You know your product is good. But when it comes to selling it online, static images get ignored while video ads bring in the actual sales.
+                </p>
+            </div>
+
+            <!-- Content Creation Pressure List -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-12">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg">
+                        <i class="fa-brands fa-instagram"></i>
                     </div>
-                    <button class="text-slate-400 hover:text-white p-1">
-                        <i id="icon-ch-8" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-                    </button>
+                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Reels</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Video Ads</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Product Videos</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Social Creatives</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center col-span-2 sm:col-span-1">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Promo Content</span>
+                </div>
+            </div>
+
+            <!-- Comparison Box: Myth vs Reality -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Traditional Myths -->
+                <div class="bg-red-950/20 border border-red-500/30 rounded-2xl p-6 relative">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-bold mb-4">
+                        <i class="fa-solid fa-xmark"></i> WHAT YOU THINK YOU NEED
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-bold text-base">❌</span>
+                            <span>A video editor charging ₹15,000+ per month</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-bold text-base">❌</span>
+                            <span>Expensive camera equipment and studio lights</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-bold text-base">❌</span>
+                            <span>Hiring actors, models, or renting a studio</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-bold text-base">❌</span>
+                            <span>Spending 10+ hours struggling inside Premiere Pro</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-bold text-base">❌</span>
+                            <span>Advanced technical video editing skills</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div id="body-ch-8" class="chapter-body hidden space-y-4 pt-3 border-t border-slate-800/80">
-                    <div class="notion-callout p-4 rounded-xl text-xs space-y-1.5">
-                        <div class="font-bold text-yellow-400 flex items-center gap-2">
-                            <i class="fa-solid fa-rotate"></i> Hook Iteration Efficiency
-                        </div>
-                        <p class="text-slate-300 leading-relaxed">
-                            When an ad starts fatiguing (CTR drops), do not rebuild the whole ad. Keep Frame 2 (Solution/CTA) untouched and create 3 new Frame 1 variations to test against each other.
-                        </p>
+                <!-- Reality with AI Kit -->
+                <div class="bg-emerald-950/20 border border-emerald-500/30 rounded-2xl p-6 relative">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold mb-4">
+                        <i class="fa-solid fa-check"></i> THE REALITY WITH AI KIT
                     </div>
+                    <p class="text-lg font-bold text-white mb-4">You don't need any of that.</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                        The AI Video Ad Kit gives you a simple, streamlined process to go from raw product to published video ad in under 30 minutes.
+                    </p>
 
-                    <!-- Hook Matrix Examples -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                            <span class="font-bold text-amber-400">Angle A: Question Hook</span>
-                            <p class="text-slate-300 mt-0.5">"Tired of dealing with [Pain Point] every morning?"</p>
-                        </div>
-                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                            <span class="font-bold text-amber-400">Angle B: Negative Callout</span>
-                            <p class="text-slate-300 mt-0.5">"Stop making this #1 mistake if you want [Goal]!"</p>
-                        </div>
-                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                            <span class="font-bold text-amber-400">Angle C: Direct Callout</span>
-                            <p class="text-slate-300 mt-0.5">"Attention [Target Demographic]: Watch this before buying!"</p>
-                        </div>
-                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                            <span class="font-bold text-amber-400">Angle D: Secret Reveal</span>
-                            <p class="text-slate-300 mt-0.5">"The secret way to solve [Pain Point] without spending $100s."</p>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Checklist -->
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                        <div class="text-xs font-bold text-slate-200">Chapter Checkpoints</div>
-                        <div class="space-y-1.5 text-xs text-slate-300">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-8-1" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Write 3 new Frame 1 hook angles for A/B testing</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-8-2" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Stitch new Frame 1 hooks with existing Frame 2 solution</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" id="task-8-3" onchange="updateChecklistState()" class="task-chk rounded border-slate-700 text-blue-600 focus:ring-0">
-                                <span>Relaunch ad variants to refresh CTR and lower CPA</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label class="block text-[11px] font-semibold text-slate-400">Chapter Notes & Testing Angles:</label>
-                        <textarea id="note-ch-8" oninput="saveNotes(8)" rows="2" placeholder="Jot down winning hook angles and CTR test results..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500"></textarea>
+                    <!-- Workflow Pill -->
+                    <div class="p-3 bg-slate-900 rounded-xl border border-emerald-500/30 text-xs font-bold text-emerald-400 flex flex-wrap items-center justify-between gap-1">
+                        <span>PRODUCT</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
+                        <span>SCRIPT</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
+                        <span>VISUALS</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
+                        <span>VIDEO</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
+                        <span>CTA</span>
                     </div>
                 </div>
             </div>
 
         </div>
-    </main>
+    </section>
+
+    <!-- WHAT'S INSIDE SECTION -->
+    <section id="whats-inside" class="py-16 md:py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-indigo-400 text-xs font-extrabold uppercase tracking-widest block mb-2">COMPLETE BREAKDOWN</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Introducing <span class="gradient-text">The AI Video Ad Kit</span>
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg">
+                    A practical system for creating professional-looking product videos with AI without wondering what to say, what to show, or how to edit.
+                </p>
+            </div>
+
+            <!-- Deliverables Stack -->
+            <div class="space-y-6">
+
+                <!-- Item 01 -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div class="flex items-start gap-4">
+                            <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">01</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">The 30-Minute AI Video System</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                    A simple 5-stage workflow that takes you from a blank page to a finished video. You don't have to figure out the process yourself.
+                                </p>
+                                <div class="flex flex-wrap gap-2 text-xs font-medium">
+                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">1. Script</span>
+                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">2. Voice</span>
+                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">3. Visuals</span>
+                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">4. Assembly</span>
+                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">5. Captions & Export</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 02 -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex items-start gap-4">
+                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">02</span>
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold text-white mb-2">AI Video Playbook</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Follow the complete step-by-step process designed to remove all guesswork from your marketing.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs text-slate-300">
+                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-bullseye text-indigo-400"></i> Define video goals
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-pen-nib text-indigo-400"></i> Generate high-retention script
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-sitemap text-indigo-400"></i> Choose video structure
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-microphone-lines text-indigo-400"></i> Create voice & visuals
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-scissors text-indigo-400"></i> Edit for peak retention
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-chart-line text-indigo-400"></i> Publish & track performance
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 03: 50 Copy-Paste AI Prompts (WITH INTERACTIVE PREVIEW) -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex items-start gap-4">
+                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">03</span>
+                        <div class="w-full">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold text-white">50 Copy-Paste AI Prompts</h3>
+                                <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-semibold border border-emerald-500/20 self-start sm:self-auto">Ready-to-use</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Stop staring at a blank ChatGPT screen wondering what to type. Get prompts for Scripts, Hooks, Scenes, Visuals, CTAs, Editing & Repurposing.
+                            </p>
+
+                            <!-- Interactive Prompt Simulator -->
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sample Prompt #04: Scroll-Stopping Hook</span>
+                                    <button onclick="copySamplePrompt(this)" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white px-2.5 py-1 rounded transition flex items-center gap-1.5">
+                                        <i class="fa-regular fa-copy"></i>
+                                        <span>Copy Prompt</span>
+                                    </button>
+                                </div>
+                                <div class="text-xs font-mono text-indigo-200 bg-slate-900/90 p-3 rounded-lg border border-slate-800 leading-relaxed overflow-x-auto">
+                                    "Act as a direct-response video scriptwriter. Write 3 scroll-stopping 3-second opening hooks for a video ad promoting <span class="text-emerald-400 font-bold">[YOUR PRODUCT NAME]</span> that solves <span class="text-emerald-400 font-bold">[PRIMARY PAIN POINT]</span> for <span class="text-emerald-400 font-bold">[TARGET AUDIENCE]</span>."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 04: 10 Video Ad Structures (INTERACTIVE TABS) -->
+                <div id="structures" class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex items-start gap-4">
+                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">04</span>
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold text-white mb-2">10 Video Ad Structures</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                You don't have to invent a new video concept every time. Pick a structure, add your product, and create your video.
+                            </p>
+
+                            <!-- Interactive Tabs for Ad Structures -->
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4" id="structure-tabs">
+                                <button onclick="switchStructure(0)" class="struct-btn active p-2 text-xs rounded-lg border font-medium transition-all text-left bg-indigo-600 border-indigo-500 text-white">Problem-Agitate</button>
+                                <button onclick="switchStructure(1)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Before / After</button>
+                                <button onclick="switchStructure(2)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Myth vs Fact</button>
+                                <button onclick="switchStructure(3)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">UGC Testimonial</button>
+                                <button onclick="switchStructure(4)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Founder Story</button>
+                                <button onclick="switchStructure(5)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Listicle 3-Point</button>
+                                <button onclick="switchStructure(6)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Day-in-the-Life</button>
+                                <button onclick="switchStructure(7)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Unboxing Experience</button>
+                                <button onclick="switchStructure(8)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Us vs Them</button>
+                                <button onclick="switchStructure(9)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Objection Smash</button>
+                            </div>
+
+                            <!-- Tab Display Area -->
+                            <div id="structure-display" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300">
+                                <span class="font-bold text-indigo-400 block mb-1 text-sm" id="struct-title">Problem → Agitate → Solution</span>
+                                <p id="struct-desc">Opens with a painful problem your audience faces, amplifies the frustration, then reveals your product as the ultimate effortless solution.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 05: Product-to-Video Worksheet -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex items-start gap-4">
+                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">05</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Product-to-Video Worksheet</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Before creating your video, clarify your offer in 5 minutes. Fill it out once and use your answers to generate a tailored video concept.
+                            </p>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-[11px] font-medium text-slate-300">
+                                <span class="p-2 bg-slate-900 rounded border border-slate-800">1. Who is it for?</span>
+                                <span class="p-2 bg-slate-900 rounded border border-slate-800">2. What problem solved?</span>
+                                <span class="p-2 bg-slate-900 rounded border border-slate-800">3. Transformation?</span>
+                                <span class="p-2 bg-slate-900 rounded border border-slate-800">4. Social proof?</span>
+                                <span class="p-2 bg-slate-900 rounded border border-slate-800 col-span-2 sm:col-span-1">5. Call to action?</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 06: First Video Challenge (INTERACTIVE TIMER) -->
+                <div id="challenge" class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex items-start gap-4">
+                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">06</span>
+                        <div class="w-full">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold text-white">First Video Challenge (30-Min Sprint)</h3>
+                                <span class="bg-amber-500/10 text-amber-400 text-xs px-2.5 py-1 rounded-full font-semibold border border-amber-500/20 self-start sm:self-auto">Action Challenge</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                Don't just read the guide. Make your first video! Set a 30-minute timer and follow the exact challenge timeline. Objective: <em>Finish the video, not make it perfect.</em>
+                            </p>
+
+                            <!-- Interactive Challenge Timeline -->
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">0–5 min</span>
+                                    <span class="text-slate-200 font-medium">Generate your AI script & opening hook</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">5–10 min</span>
+                                    <span class="text-slate-200 font-medium">Generate realistic AI voiceover</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">10–20 min</span>
+                                    <span class="text-slate-200 font-medium">Gather product visuals and AI scene clips</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">20–27 min</span>
+                                    <span class="text-slate-200 font-medium">Assemble your video timeline</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">27–30 min</span>
+                                    <span class="text-slate-200 font-medium">Auto-captions + CTA + Export</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 07: Video Quality Checklist (INTERACTIVE CHECKLIST) -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
+                    <div class="flex items-start gap-4">
+                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">07</span>
+                        <div class="w-full">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white">Video Quality Checklist</h3>
+                                <span id="checklist-score" class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">0/6 Passed</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Before publishing your video ad, quickly verify it against these 6 critical conversion factors:
+                            </p>
+
+                            <!-- Interactive Checkbox List -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span>✓ Is the hook scroll-stopping?</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span>✓ Is the voiceover audio clear?</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span>✓ Do visuals match the message?</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span>✓ Is the editing pacing fast?</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span>✓ Are auto-captions readable?</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span>✓ Is the CTA single & clear?</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VALUE STACK / WHY ₹499 IS A NO-BRAINER -->
+    <section class="py-16 bg-slate-900/40 border-y border-slate-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-6">
+                Why Pay ₹15,000/Mo when you can do it yourself in 30 Mins?
+            </h2>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 max-w-2xl mx-auto mb-8 text-left">
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">01. 30-Minute AI Video System</span>
+                        <span class="text-slate-400 font-mono">Value: ₹1,500</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">02. AI Video Playbook</span>
+                        <span class="text-slate-400 font-mono">Value: ₹999</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">03. 50 Copy-Paste AI Prompts</span>
+                        <span class="text-slate-400 font-mono">Value: ₹1,200</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">04. 10 Video Ad Frameworks</span>
+                        <span class="text-slate-400 font-mono">Value: ₹1,500</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">05. Product-to-Video Worksheet</span>
+                        <span class="text-slate-400 font-mono">Value: ₹500</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">06. 30-Min First Video Challenge</span>
+                        <span class="text-slate-400 font-mono">Value: ₹800</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-300">07. Pre-Launch Quality Checklist</span>
+                        <span class="text-slate-400 font-mono">Value: ₹499</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-3 text-base font-bold text-white">
+                        <span>Total Real Value</span>
+                        <span class="text-slate-400 line-through font-mono">₹6,998</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-indigo-500/30 flex items-center justify-between bg-indigo-950/40 p-4 rounded-xl">
+                    <div>
+                        <div class="text-xs text-indigo-300 uppercase font-bold tracking-wider">Today's Launch Price</div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">₹499 <span class="text-xs font-normal text-slate-400">(One-Time)</span></div>
+                    </div>
+                    <a href="#checkout-section" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-lg shadow-lg shadow-emerald-500/20 transition inline-block text-center">
+                        GET INSTANT ACCESS
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-16 md:py-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-indigo-400 text-xs font-extrabold uppercase tracking-widest block mb-2">CLEAR YOUR DOUBTS</span>
+                <h2 class="text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
+                        <span>Do I need paid AI tools to use this kit?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
+                        No! The kit is specially designed to work with free and freemium AI tools (like ChatGPT, Claude, CapCut, and free AI image/voice generators). You do not need expensive subscriptions to get started.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
+                        <span>I have never edited a video before. Can I really do this?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
+                        Yes, 100%. This kit was built specifically for non-editors. The step-by-step workflow handles all the technical thinking. If you know how to copy and paste text into AI tools, you can easily create video ads.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
+                        <span>How quickly will I receive access after payment?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
+                        Immediately! As soon as your payment of ₹499 is completed, you will receive instant digital access to the complete kit, prompts, playbook, templates, and worksheets directly in your browser and email.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
+                        <span>Is this a recurring subscription?</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
+                        No. It is a one-time payment of ₹499 for full lifetime access. No hidden charges or recurring monthly fees.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INLINE CHECKOUT & FINAL CTA SECTION -->
+    <section id="checkout-section" class="py-16 md:py-20 relative overflow-hidden bg-gradient-to-b from-slate-950 via-indigo-950/40 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                Stop Overthinking Video Ads. <br><span class="gradient-text">Start Creating Them In 30 Minutes.</span>
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                Get instant access to the exact prompts, frameworks, and workflows needed to generate high-converting product videos today.
+            </p>
+
+            <div class="glass-card bg-slate-900 border border-slate-700 p-6 sm:p-8 rounded-2xl max-w-md mx-auto text-left relative shadow-2xl">
+                <div class="text-center mb-6">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3 text-xl border border-emerald-500/20">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Complete Your Order</h3>
+                    <p class="text-xs text-slate-400">Instant access to the complete AI Video Ad Kit</p>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-5">
+                    <div class="flex justify-between items-center text-sm font-semibold text-white mb-2">
+                        <span>AI Video Ad Kit (Lifetime)</span>
+                        <span>₹499</span>
+                    </div>
+                    <div class="text-xs text-slate-400 space-y-1">
+                        <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 50 Copy-Paste AI Prompts</div>
+                        <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 10 Video Ad Frameworks</div>
+                        <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 30-Min Challenge & Checklist</div>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <form id="payment-form" onsubmit="handlePayment(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-slate-300 font-medium mb-1">Your Full Name</label>
+                        <input type="text" required placeholder="John Doe" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-300 font-medium mb-1">Email Address (For instant access link)</label>
+                        <input type="email" required placeholder="you@gmail.com" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>PAY ₹499 & GET INSTANT ACCESS</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-4 text-center">
+                    <span class="text-[10px] text-slate-500 uppercase font-medium tracking-wider">Supports UPI • GPay • PhonePe • Cards</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 border-t border-slate-800 mt-12 py-6 text-center text-xs text-slate-500 space-y-2">
-        <p class="font-medium text-slate-400">AI Video Ad Creation — Playbook Master Workbook</p>
-        <p>Zero API Required • Local Browser Storage • Free Forever Playbook Strategy</p>
+    <footer class="bg-slate-950 py-8 border-t border-slate-900 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
+            <div class="flex items-center justify-center gap-2 text-slate-300 font-bold text-sm">
+                <i class="fa-solid fa-wand-magic-sparkles text-indigo-400"></i> AI Video Ad Kit
+            </div>
+            <p>© 2026 AI Video Ad Kit. All rights reserved. Built for digital product creators & e-commerce brands.</p>
+            <p class="text-[11px] text-slate-600">Disclaimer: This site is not a part of Facebook or Meta Inc. Results may vary based on product quality and ad execution.</p>
+        </div>
     </footer>
 
-    <!-- TOAST NOTIFICATION -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-blue-600 text-white text-xs font-semibold px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 toast-notification">
-        <i class="fa-solid fa-circle-check"></i>
-        <span id="toastMsg">Action completed!</span>
+    <!-- STICKY MOBILE BOTTOM CTA BAR -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md p-3 border-t border-slate-800 flex items-center justify-between gap-3 shadow-2xl">
+        <div>
+            <div class="text-[10px] text-slate-400 uppercase font-bold">AI Video Ad Kit</div>
+            <div class="text-lg font-black text-white">₹499 <span class="text-xs text-slate-500 line-through">₹2,999</span></div>
+        </div>
+        <a href="#checkout-section" class="flex-1 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/20 text-center flex items-center justify-center gap-2">
+            <span>GET ACCESS</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
     </div>
 
-    <!-- SCRIPT APPLICATION LOGIC -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-20 right-4 z-50 bg-emerald-500 text-white text-xs font-bold px-4 py-3 rounded-xl shadow-xl hidden flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-msg">Copied to clipboard!</span>
+    </div>
+
     <script>
-        const STORAGE_CHAPTERS_KEY = 'ai_ad_playbook_chapters_v2';
-        const STORAGE_TASKS_KEY = 'ai_ad_playbook_tasks_v2';
-        const STORAGE_NOTES_KEY = 'ai_ad_playbook_notes_v2';
-
-        let currentFilter = 'all';
-
-        window.onload = function() {
-            loadSavedState();
-            updateProgressMetrics();
-        };
-
-        // TOGGLE CHAPTER EXPANSION
-        function toggleChapterBody(num) {
-            const body = document.getElementById(`body-ch-${num}`);
-            const icon = document.getElementById(`icon-ch-${num}`);
-            if (body.classList.contains('hidden')) {
-                body.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-            } else {
-                body.classList.add('hidden');
-                icon.classList.remove('rotate-180');
+        // Tab data for 10 Video Ad Structures
+        const structures = [
+            {
+                title: "01. Problem → Agitate → Solution",
+                desc: "Opens with a painful problem your target audience faces, amplifies the frustration, then reveals your product as the ultimate, effortless solution."
+            },
+            {
+                title: "02. Before / After Transformation",
+                desc: "Shows the chaotic or frustrating state 'Before' using your product, contrasted sharply with the smooth, happy 'After' state."
+            },
+            {
+                title: "03. Myth vs. Fact",
+                desc: "Busts a common misconception in your niche ('You think you need an editor?') and replaces it with the simple AI reality."
+            },
+            {
+                title: "04. UGC Testimonial Simulation",
+                desc: "A casual, selfie-style AI voiceover presenting honest feedback and authentic unscripted reactions."
+            },
+            {
+                title: "05. Founder Story / Behind The Scenes",
+                desc: "The personal journey of why you created the product, building immediate trust and personal connection."
+            },
+            {
+                title: "06. 3-Point Listicle",
+                desc: "Fast-paced video breaking down '3 Reasons Why [Product] is Going Viral This Week'."
+            },
+            {
+                title: "07. Day-in-the-Life Product Integration",
+                desc: "Demonstrates naturally how your product fits into a customer's daily routine without feeling like a hard pitch."
+            },
+            {
+                title: "08. Unboxing & First Impressions",
+                desc: "Captures the high-excitement tactile experience of receiving, opening, and using the product for the first time."
+            },
+            {
+                title: "09. Us vs. Them Comparison",
+                desc: "Side-by-side comparison chart or split video showing why your product beats traditional expensive alternatives."
+            },
+            {
+                title: "10. The Objection-Smash",
+                desc: "Systematically tackles the top 3 reasons someone might hesitate to buy and proves them wrong with visuals."
             }
-        }
+        ];
 
-        // CHAPTER COMPLETION LOGIC
-        function toggleChapterComplete(num, event) {
-            if (event) event.stopPropagation();
-            
-            const card = document.getElementById(`chapter-${num}`);
-            const chk = document.getElementById(`chk-ch-${num}`);
-            const isDone = chk.checked;
-
-            card.setAttribute('data-status', isDone ? 'completed' : 'pending');
-            saveChapterState();
-            updateProgressMetrics();
-            applyFilterRules();
-
-            showToast(isDone ? `Chapter ${num} marked as complete!` : `Chapter ${num} status updated.`);
-        }
-
-        // CHECKLIST TASKS LOGIC
-        function updateChecklistState() {
-            saveTaskState();
-            updateProgressMetrics();
-        }
-
-        // SAVE & LOAD STORAGE
-        function saveChapterState() {
-            const state = {};
-            for (let i = 1; i <= 8; i++) {
-                const chk = document.getElementById(`chk-ch-${i}`);
-                if (chk) state[i] = chk.checked;
-            }
-            localStorage.setItem(STORAGE_CHAPTERS_KEY, JSON.stringify(state));
-        }
-
-        function saveTaskState() {
-            const state = {};
-            document.querySelectorAll('.task-chk').forEach(chk => {
-                state[chk.id] = chk.checked;
-            });
-            localStorage.setItem(STORAGE_TASKS_KEY, JSON.stringify(state));
-        }
-
-        function saveNotes(num) {
-            const noteEl = document.getElementById(`note-ch-${num}`);
-            if (!noteEl) return;
-            
-            let notes = {};
-            try { notes = JSON.parse(localStorage.getItem(STORAGE_NOTES_KEY)) || {}; } catch(e){}
-            notes[num] = noteEl.value;
-            localStorage.setItem(STORAGE_NOTES_KEY, JSON.stringify(notes));
-        }
-
-        function loadSavedState() {
-            // Load Chapters
-            try {
-                const chapters = JSON.parse(localStorage.getItem(STORAGE_CHAPTERS_KEY)) || {};
-                for (let i = 1; i <= 8; i++) {
-                    const chk = document.getElementById(`chk-ch-${i}`);
-                    const card = document.getElementById(`chapter-${i}`);
-                    if (chk && chapters[i]) {
-                        chk.checked = true;
-                        if (card) card.setAttribute('data-status', 'completed');
-                    }
-                }
-            } catch(e){}
-
-            // Load Tasks
-            try {
-                const tasks = JSON.parse(localStorage.getItem(STORAGE_TASKS_KEY)) || {};
-                document.querySelectorAll('.task-chk').forEach(chk => {
-                    if (tasks[chk.id]) chk.checked = true;
-                });
-            } catch(e){}
-
-            // Load Notes
-            try {
-                const notes = JSON.parse(localStorage.getItem(STORAGE_NOTES_KEY)) || {};
-                for (let i = 1; i <= 8; i++) {
-                    const noteEl = document.getElementById(`note-ch-${i}`);
-                    if (noteEl && notes[i]) noteEl.value = notes[i];
-                }
-            } catch(e){}
-        }
-
-        // PROGRESS METRICS CALCULATION
-        function updateProgressMetrics() {
-            let doneChapters = 0;
-            for (let i = 1; i <= 8; i++) {
-                const chk = document.getElementById(`chk-ch-${i}`);
-                if (chk && chk.checked) doneChapters++;
-            }
-
-            const allTasks = document.querySelectorAll('.task-chk');
-            let doneTasks = 0;
-            allTasks.forEach(t => { if (t.checked) doneTasks++; });
-
-            const percent = Math.round((doneChapters / 8) * 100);
-
-            document.getElementById('progressPercent').textContent = `${percent}%`;
-            document.getElementById('progressBar').style.width = `${percent}%`;
-            document.getElementById('chaptersCompletedText').textContent = `${doneChapters} of 8 Chapters Done`;
-            document.getElementById('checklistTasksText').textContent = `${doneTasks}/${allTasks.length} Checkpoints`;
-        }
-
-        // FILTER AND SEARCH LOGIC
-        function setChapterFilter(filter) {
-            currentFilter = filter;
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.className = "filter-btn px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white hover:bg-slate-800";
-            });
-            const activeBtn = document.getElementById(`filter-${filter}`);
-            if (activeBtn) {
-                activeBtn.className = "filter-btn px-3 py-1.5 rounded-lg font-semibold bg-blue-600 text-white";
-            }
-            applyFilterRules();
-        }
-
-        function filterChapters() {
-            applyFilterRules();
-        }
-
-        function applyFilterRules() {
-            const query = (document.getElementById('chapterSearch').value || '').toLowerCase();
-
-            for (let i = 1; i <= 8; i++) {
-                const card = document.getElementById(`chapter-${i}`);
-                if (!card) continue;
-
-                const status = card.getAttribute('data-status') || 'pending';
-                const textContent = card.textContent.toLowerCase();
-
-                const matchesStatus = (currentFilter === 'all') || 
-                                     (currentFilter === 'completed' && status === 'completed') || 
-                                     (currentFilter === 'pending' && status === 'pending');
-                
-                const matchesQuery = !query || textContent.includes(query);
-
-                if (matchesStatus && matchesQuery) {
-                    card.classList.remove('hidden');
+        function switchStructure(index) {
+            const tabs = document.querySelectorAll('#structure-tabs button');
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.className = "struct-btn active p-2 text-xs rounded-lg border font-medium transition-all text-left bg-indigo-600 border-indigo-500 text-white";
                 } else {
-                    card.classList.add('hidden');
+                    tab.className = "struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800";
                 }
-            }
+            });
+
+            document.getElementById('struct-title').innerText = structures[index].title;
+            document.getElementById('struct-desc').innerText = structures[index].desc;
         }
 
-        function resetAllProgress() {
-            if (!confirm("Are you sure you want to reset all playbook progress and notes?")) return;
-            localStorage.removeItem(STORAGE_CHAPTERS_KEY);
-            localStorage.removeItem(STORAGE_TASKS_KEY);
-            localStorage.removeItem(STORAGE_NOTES_KEY);
-
-            for (let i = 1; i <= 8; i++) {
-                const chk = document.getElementById(`chk-ch-${i}`);
-                const card = document.getElementById(`chapter-${i}`);
-                const note = document.getElementById(`note-ch-${i}`);
-                if (chk) chk.checked = false;
-                if (card) card.setAttribute('data-status', 'pending');
-                if (note) note.value = '';
-            }
-
-            document.querySelectorAll('.task-chk').forEach(t => t.checked = false);
-
-            updateProgressMetrics();
-            applyFilterRules();
-            showToast('Playbook progress reset.');
-        }
-
-        // UTILITIES
-        function copyText(elementId) {
-            const el = document.getElementById(elementId);
-            if (!el) return;
-
-            let text = el.innerText || el.value;
+        function copySamplePrompt(btn) {
+            const promptText = "Act as a direct-response video scriptwriter. Write 3 scroll-stopping 3-second opening hooks for a video ad promoting [YOUR PRODUCT NAME] that solves [PRIMARY PAIN POINT] for [TARGET AUDIENCE].";
             
-            const temp = document.createElement('textarea');
-            temp.value = text;
-            document.body.appendChild(temp);
-            temp.select();
-            document.execCommand('copy');
-            document.body.removeChild(temp);
+            // Clipboard fallback logic
+            const tempInput = document.createElement("textarea");
+            tempInput.value = promptText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
 
-            showToast('Copied to clipboard!');
+            showToast("Prompt copied to clipboard!");
+        }
+
+        function updateChecklist() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                if(chk.checked) checkedCount++;
+            });
+            document.getElementById('checklist-score').innerText = `${checkedCount}/6 Passed`;
+        }
+
+        function toggleFaq(btn) {
+            const ans = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function handlePayment(e) {
+            e.preventDefault();
+            showToast("Order placed successfully! Access details sent to your email.");
+            e.target.reset();
         }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toastMsg');
-            toastMsg.textContent = msg;
+            document.getElementById('toast-msg').innerText = msg;
             toast.classList.remove('hidden');
-
             setTimeout(() => {
                 toast.classList.add('hidden');
-            }, 2200);
+            }, 4000);
         }
     </script>
 </body>
