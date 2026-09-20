@@ -1,14 +1,21 @@
- <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Ad Kit — Create Product Videos in 30 Mins for ₹499</title>
+    <title>AI Video Ad Kit — Create Product Videos in 30 Mins</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -19,45 +26,26 @@
                     },
                     colors: {
                         brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            accent: '#10b981',
-                            gold: '#f59e0b',
-                            dark: '#0b0f19',
-                            card: '#111827',
-                            border: '#1f2937'
-                        }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        glow: {
-                            '0%': { boxShadow: '0 0 15px rgba(99, 102, 241, 0.3)' },
-                            '100%': { boxShadow: '0 0 30px rgba(99, 102, 241, 0.8)' }
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
                         }
                     }
                 }
             }
         }
     </script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #080c14;
+            background-color: #030712;
             color: #f3f4f6;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #34d399 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-gold {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            background: linear-gradient(135deg, #34d399 0%, #a7f3d0 50%, #60a5fa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -66,86 +54,77 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glass-card-hover:hover {
-            border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.25);
+        .glow-effect {
+            box-shadow: 0 0 50px -12px rgba(16, 185, 129, 0.25);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white pb-20 md:pb-0">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
 
-    <!-- Sticky Top Urgency Bar -->
-    <div class="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 text-xs md:text-sm font-medium py-2 px-4 text-center text-indigo-100 border-b border-indigo-500/20 flex justify-center items-center gap-2">
-        <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2 py-0.5 rounded-full border border-emerald-500/30 font-semibold uppercase tracking-wider">Launch Price</span>
-        <span>Get the complete AI Video Ad Kit today for just <strong>₹499</strong> (Save ₹2,500)</span>
-        <span class="hidden md:inline text-indigo-300">• One-Time Payment</span>
+    <!-- SIMPLE BRAND LOGO BANNER (NO MENU BAR) -->
+    <div class="py-4 border-b border-slate-900 bg-slate-950/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-black text-lg tracking-tight text-white">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                    <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                </div>
+                <span>AI Video <span class="text-emerald-400">Ad Kit</span></span>
+            </div>
+            <a href="https://superprofile.bio/vp/ai-video-kit" target="_blank" rel="noopener noreferrer" class="text-xs bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-full font-semibold transition">
+                Get Access ₹499 <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+        </div>
     </div>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-12 pb-16 md:pt-20 md:pb-28 overflow-hidden">
-        <!-- Ambient background glows -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-slate-900">
+        <!-- Background Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/3 w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             
-            <!-- Hero Pill Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs sm:text-sm text-slate-300 mb-6 shadow-inner">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
                 <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="font-medium text-slate-200">New 2026 AI Prompt System</span>
-                <span class="text-slate-500">|</span>
-                <span class="text-indigo-400 font-semibold">Zero Experience Needed</span>
+                Instant Digital Access • No Software Required
             </div>
 
-            <!-- Main Title -->
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
-                Create Professional Product Videos With AI — <span class="gradient-text">Without Hiring a Video Editor</span>
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.15] mb-6">
+                Create Professional Product Videos With AI <br class="hidden sm:inline">
+                <span class="gradient-text">— Without Hiring a Video Editor</span>
             </h1>
 
-            <!-- Subtitle -->
-            <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8 font-normal">
+            <!-- Subheadline -->
+            <p class="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto mb-8 font-normal leading-relaxed">
                 Turn your product into a ready-to-publish video ad using a simple AI-powered system — even if you've never learned professional video editing.
             </p>
 
-            <!-- Feature Tags Grid -->
-            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 text-xs sm:text-sm font-medium text-slate-300">
-                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
-                    <i class="fa-solid fa-xmark text-red-400"></i> No Camera
-                </span>
-                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
-                    <i class="fa-solid fa-xmark text-red-400"></i> No Studio
-                </span>
-                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
-                    <i class="fa-solid fa-xmark text-red-400"></i> No Video Editor
-                </span>
-                <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
-                    <i class="fa-solid fa-xmark text-red-400"></i> No Editing Skills
-                </span>
+            <!-- Feature Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-slate-400 mb-10">
+                <span class="bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-1.5"><i class="fa-solid fa-xmark text-red-400"></i> No camera</span>
+                <span class="bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-1.5"><i class="fa-solid fa-xmark text-red-400"></i> No studio</span>
+                <span class="bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-1.5"><i class="fa-solid fa-xmark text-red-400"></i> No video editor</span>
+                <span class="bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400"></i> Just your product + AI</span>
             </div>
 
-            <!-- Formula Banner -->
-            <div class="inline-block p-1 rounded-2xl bg-gradient-to-r from-indigo-500/30 via-emerald-500/30 to-indigo-500/30 mb-10 max-w-full">
-                <div class="bg-slate-900 px-4 sm:px-8 py-3 rounded-xl border border-slate-800 text-xs sm:text-sm md:text-base font-semibold text-slate-200">
-                    Just <span class="text-white underline decoration-indigo-500 decoration-2 font-bold">Your Product</span> + <span class="text-indigo-400 font-bold">AI</span> + <span class="text-emerald-400 font-bold">The AI Video Ad Kit</span>
-                </div>
-            </div>
-
-            <!-- Main CTA Box -->
-            <div class="glass-card max-w-md mx-auto p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-800 relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg border-l border-b border-emerald-500/20">
+            <!-- Hero CTA Card -->
+            <div class="glass-card max-w-md mx-auto p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-800 relative overflow-hidden glow-effect">
+                <div class="absolute top-0 right-0 bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg border-l border-b border-emerald-500/30">
                     Instant Digital Delivery
                 </div>
 
-                <div class="text-left mb-5">
-                    <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-1">Get The Complete Kit</div>
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-3xl sm:text-4xl font-extrabold text-white">₹499</span>
-                        <span class="text-slate-500 text-sm line-through">₹2,999</span>
-                        <span class="text-emerald-400 text-xs font-bold bg-emerald-500/10 px-2 py-0.5 rounded">83% OFF</span>
+                <div class="text-left mb-6">
+                    <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-1">Get The Complete Kit Today</div>
+                    <div class="flex items-baseline gap-3">
+                        <span class="text-4xl font-black text-white">₹499</span>
+                        <span class="text-slate-500 text-base line-through">₹1,999</span>
+                        <span class="text-emerald-400 text-xs font-bold bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">75% OFF</span>
                     </div>
                 </div>
 
-                <a href="#checkout-section" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-0.5 active:translate-y-0">
+                <a href="https://superprofile.bio/vp/ai-video-kit" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-0.5 active:translate-y-0">
                     <i class="fa-solid fa-bolt text-yellow-300"></i>
                     <span>GET THE AI VIDEO AD KIT</span>
                 </a>
@@ -162,105 +141,71 @@
         </div>
     </section>
 
-    <!-- PROBLEM SECTION: Your Product Deserves Better -->
-    <section id="why-video" class="py-16 md:py-24 bg-slate-900/60 border-y border-slate-800 relative">
+    <!-- PAIN POINT VS SOLUTION SECTION -->
+    <section class="py-16 md:py-24 bg-slate-950 relative border-b border-slate-900">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-                    Your Product Deserves Better Than Another <span class="text-red-400">Static Image</span>
+                    Your Product Deserves Better Than Another Static Image
                 </h2>
-                <p class="text-slate-300 text-base sm:text-lg">
-                    You know your product is good. But when it comes to selling it online, static images get ignored while video ads bring in the actual sales.
+                <p class="text-slate-400 text-base sm:text-lg">
+                    You know your product is good. But when it comes to selling it online, you're expected to constantly create high-converting video content.
                 </p>
             </div>
 
-            <!-- Content Creation Pressure List -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-12">
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg">
-                        <i class="fa-brands fa-instagram"></i>
+            <!-- Content grid -->
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- What you think you need -->
+                <div class="bg-red-950/20 border border-red-900/40 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="text-red-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-xmark"></i> The Old, Expensive Way
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">You may think you need:</h3>
+                        <ul class="space-y-3 text-slate-300 text-sm">
+                            <li class="flex items-start gap-3"><span class="text-red-400 font-bold">❌</span> <span>A video editor (₹15,000+/month)</span></li>
+                            <li class="flex items-start gap-3"><span class="text-red-400 font-bold">❌</span> <span>Expensive camera equipment & lighting</span></li>
+                            <li class="flex items-start gap-3"><span class="text-red-400 font-bold">❌</span> <span>Actors, studios, or UGC agencies</span></li>
+                            <li class="flex items-start gap-3"><span class="text-red-400 font-bold">❌</span> <span>Hours of frustrating editing software</span></li>
+                            <li class="flex items-start gap-3"><span class="text-red-400 font-bold">❌</span> <span>Advanced video editing skills</span></li>
+                        </ul>
                     </div>
-                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Reels</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-rectangle-ad"></i>
+                    <div class="mt-6 pt-4 border-t border-red-900/30 text-xs text-red-300 font-medium">
+                        Result: Slow execution, high budget burn, and inconsistent ad testing.
                     </div>
-                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Video Ads</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-box-open"></i>
-                    </div>
-                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Product Videos</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-photo-film"></i>
-                    </div>
-                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Social Creatives</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center col-span-2 sm:col-span-1">
-                    <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-bullhorn"></i>
-                    </div>
-                    <span class="text-xs sm:text-sm font-semibold text-slate-200 block">Promo Content</span>
-                </div>
-            </div>
-
-            <!-- Comparison Box: Myth vs Reality -->
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- Traditional Myths -->
-                <div class="bg-red-950/20 border border-red-500/30 rounded-2xl p-6 relative">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-bold mb-4">
-                        <i class="fa-solid fa-xmark"></i> WHAT YOU THINK YOU NEED
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-400 font-bold text-base">❌</span>
-                            <span>A video editor charging ₹15,000+ per month</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-400 font-bold text-base">❌</span>
-                            <span>Expensive camera equipment and studio lights</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-400 font-bold text-base">❌</span>
-                            <span>Hiring actors, models, or renting a studio</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-400 font-bold text-base">❌</span>
-                            <span>Spending 10+ hours struggling inside Premiere Pro</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-400 font-bold text-base">❌</span>
-                            <span>Advanced technical video editing skills</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Reality with AI Kit -->
-                <div class="bg-emerald-950/20 border border-emerald-500/30 rounded-2xl p-6 relative">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold mb-4">
-                        <i class="fa-solid fa-check"></i> THE REALITY WITH AI KIT
+                <!-- What you actually need -->
+                <div class="bg-emerald-950/20 border border-emerald-900/40 rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                    <div>
+                        <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> The AI Video Ad Kit Way
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">What you actually need:</h3>
+                        <p class="text-slate-300 text-sm mb-6">
+                            A simple, step-by-step process that converts your existing product images into high-converting video ads in 30 minutes.
+                        </p>
+                        
+                        <!-- Simple Flow Diagram -->
+                        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">The 5-Step Process:</div>
+                            <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">PRODUCT</span>
+                                <i class="fa-solid fa-chevron-right text-slate-600 text-[10px]"></i>
+                                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">SCRIPT</span>
+                                <i class="fa-solid fa-chevron-right text-slate-600 text-[10px]"></i>
+                                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">VISUALS</span>
+                                <i class="fa-solid fa-chevron-right text-slate-600 text-[10px]"></i>
+                                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">VIDEO</span>
+                                <i class="fa-solid fa-chevron-right text-slate-600 text-[10px]"></i>
+                                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">CTA</span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-lg font-bold text-white mb-4">You don't need any of that.</p>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-6">
-                        The AI Video Ad Kit gives you a simple, streamlined process to go from raw product to published video ad in under 30 minutes.
-                    </p>
 
-                    <!-- Workflow Pill -->
-                    <div class="p-3 bg-slate-900 rounded-xl border border-emerald-500/30 text-xs font-bold text-emerald-400 flex flex-wrap items-center justify-between gap-1">
-                        <span>PRODUCT</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
-                        <span>SCRIPT</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
-                        <span>VISUALS</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
-                        <span>VIDEO</span>
-                        <i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i>
-                        <span>CTA</span>
+                    <div class="mt-6 pt-4 border-t border-emerald-900/30 text-xs text-emerald-300 font-medium">
+                        Result: Unlimited ad creative variations in minutes for just ₹499 one-time.
                     </div>
                 </div>
             </div>
@@ -269,367 +214,265 @@
     </section>
 
     <!-- WHAT'S INSIDE SECTION -->
-    <section id="whats-inside" class="py-16 md:py-24 relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-16 md:py-24 bg-slate-950 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-indigo-400 text-xs font-extrabold uppercase tracking-widest block mb-2">COMPLETE BREAKDOWN</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-                    Introducing <span class="gradient-text">The AI Video Ad Kit</span>
+                <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">Complete Breakdown</div>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                    What’s Inside The AI Video Ad Kit
                 </h2>
-                <p class="text-slate-300 text-base sm:text-lg">
-                    A practical system for creating professional-looking product videos with AI without wondering what to say, what to show, or how to edit.
+                <p class="text-slate-400 text-base sm:text-lg">
+                    A practical system engineered to remove guesswork and turn your product into a high-converting video ad in 30 minutes.
                 </p>
             </div>
 
-            <!-- Deliverables Stack -->
-            <div class="space-y-6">
+            <div class="space-y-12">
 
-                <!-- Item 01 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div class="flex items-start gap-4">
-                            <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">01</span>
-                            <div>
-                                <h3 class="text-xl font-bold text-white mb-2">The 30-Minute AI Video System</h3>
-                                <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                    A simple 5-stage workflow that takes you from a blank page to a finished video. You don't have to figure out the process yourself.
-                                </p>
-                                <div class="flex flex-wrap gap-2 text-xs font-medium">
-                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">1. Script</span>
-                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">2. Voice</span>
-                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">3. Visuals</span>
-                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">4. Assembly</span>
-                                    <span class="bg-indigo-950/80 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-800/50">5. Captions & Export</span>
-                                </div>
-                            </div>
+                <!-- 01 — 30-Min System -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 grid md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-1">
+                        <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">01 / WORKFLOW</span>
+                        <h3 class="text-2xl font-bold text-white mt-1 mb-3">The 30-Minute AI Video System</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            A simple 5-stage workflow that takes you from a completely blank page to a polished, ready-to-publish video ad.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2 bg-slate-950 p-4 sm:p-6 rounded-xl border border-slate-800">
+                        <div class="grid grid-cols-5 gap-2 text-center text-xs font-semibold">
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">1. Script</div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">2. Voice</div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">3. Visuals</div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">4. Assembly</div>
+                            <div class="p-2 rounded bg-emerald-500/20 border border-emerald-500/30 text-emerald-300">5. Export</div>
                         </div>
+                        <p class="text-xs text-slate-500 mt-3 text-center">Stop wondering what step comes next. Just follow the sequence.</p>
                     </div>
                 </div>
 
-                <!-- Item 02 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex items-start gap-4">
-                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">02</span>
-                        <div class="w-full">
-                            <h3 class="text-xl font-bold text-white mb-2">AI Video Playbook</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Follow the complete step-by-step process designed to remove all guesswork from your marketing.
-                            </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs text-slate-300">
-                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-bullseye text-indigo-400"></i> Define video goals
-                                </div>
-                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-pen-nib text-indigo-400"></i> Generate high-retention script
-                                </div>
-                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-sitemap text-indigo-400"></i> Choose video structure
-                                </div>
-                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-microphone-lines text-indigo-400"></i> Create voice & visuals
-                                </div>
-                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-scissors text-indigo-400"></i> Edit for peak retention
-                                </div>
-                                <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-chart-line text-indigo-400"></i> Publish & track performance
-                                </div>
-                            </div>
-                        </div>
+                <!-- 02 — Playbook -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 grid md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-1">
+                        <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">02 / GUIDEBOOK</span>
+                        <h3 class="text-2xl font-bold text-white mt-1 mb-3">AI Video Playbook</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Follow the complete step-by-step process designed to remove all technical guesswork.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2 grid sm:grid-cols-2 gap-3 text-xs">
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Define video goals</div>
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Generate persuasive scripts</div>
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Choose ad structures</div>
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Create voice & AI visuals</div>
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Edit for retention</div>
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Publish and track results</div>
                     </div>
                 </div>
 
-                <!-- Item 03: 50 Copy-Paste AI Prompts (WITH INTERACTIVE PREVIEW) -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex items-start gap-4">
-                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">03</span>
-                        <div class="w-full">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                                <h3 class="text-xl font-bold text-white">50 Copy-Paste AI Prompts</h3>
-                                <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-semibold border border-emerald-500/20 self-start sm:self-auto">Ready-to-use</span>
-                            </div>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Stop staring at a blank ChatGPT screen wondering what to type. Get prompts for Scripts, Hooks, Scenes, Visuals, CTAs, Editing & Repurposing.
-                            </p>
-
-                            <!-- Interactive Prompt Simulator -->
-                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sample Prompt #04: Scroll-Stopping Hook</span>
-                                    <button onclick="copySamplePrompt(this)" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white px-2.5 py-1 rounded transition flex items-center gap-1.5">
-                                        <i class="fa-regular fa-copy"></i>
-                                        <span>Copy Prompt</span>
-                                    </button>
-                                </div>
-                                <div class="text-xs font-mono text-indigo-200 bg-slate-900/90 p-3 rounded-lg border border-slate-800 leading-relaxed overflow-x-auto">
-                                    "Act as a direct-response video scriptwriter. Write 3 scroll-stopping 3-second opening hooks for a video ad promoting <span class="text-emerald-400 font-bold">[YOUR PRODUCT NAME]</span> that solves <span class="text-emerald-400 font-bold">[PRIMARY PAIN POINT]</span> for <span class="text-emerald-400 font-bold">[TARGET AUDIENCE]</span>."
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 04: 10 Video Ad Structures (INTERACTIVE TABS) -->
-                <div id="structures" class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex items-start gap-4">
-                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">04</span>
-                        <div class="w-full">
-                            <h3 class="text-xl font-bold text-white mb-2">10 Video Ad Structures</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                                You don't have to invent a new video concept every time. Pick a structure, add your product, and create your video.
-                            </p>
-
-                            <!-- Interactive Tabs for Ad Structures -->
-                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4" id="structure-tabs">
-                                <button onclick="switchStructure(0)" class="struct-btn active p-2 text-xs rounded-lg border font-medium transition-all text-left bg-indigo-600 border-indigo-500 text-white">Problem-Agitate</button>
-                                <button onclick="switchStructure(1)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Before / After</button>
-                                <button onclick="switchStructure(2)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Myth vs Fact</button>
-                                <button onclick="switchStructure(3)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">UGC Testimonial</button>
-                                <button onclick="switchStructure(4)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Founder Story</button>
-                                <button onclick="switchStructure(5)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Listicle 3-Point</button>
-                                <button onclick="switchStructure(6)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Day-in-the-Life</button>
-                                <button onclick="switchStructure(7)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Unboxing Experience</button>
-                                <button onclick="switchStructure(8)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Us vs Them</button>
-                                <button onclick="switchStructure(9)" class="struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">Objection Smash</button>
-                            </div>
-
-                            <!-- Tab Display Area -->
-                            <div id="structure-display" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300">
-                                <span class="font-bold text-indigo-400 block mb-1 text-sm" id="struct-title">Problem → Agitate → Solution</span>
-                                <p id="struct-desc">Opens with a painful problem your audience faces, amplifies the frustration, then reveals your product as the ultimate effortless solution.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 05: Product-to-Video Worksheet -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex items-start gap-4">
-                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">05</span>
+                <!-- 03 — 50 Copy Paste Prompts -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Product-to-Video Worksheet</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Before creating your video, clarify your offer in 5 minutes. Fill it out once and use your answers to generate a tailored video concept.
-                            </p>
-                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-[11px] font-medium text-slate-300">
-                                <span class="p-2 bg-slate-900 rounded border border-slate-800">1. Who is it for?</span>
-                                <span class="p-2 bg-slate-900 rounded border border-slate-800">2. What problem solved?</span>
-                                <span class="p-2 bg-slate-900 rounded border border-slate-800">3. Transformation?</span>
-                                <span class="p-2 bg-slate-900 rounded border border-slate-800">4. Social proof?</span>
-                                <span class="p-2 bg-slate-900 rounded border border-slate-800 col-span-2 sm:col-span-1">5. Call to action?</span>
+                            <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">03 / PROMPT LIBRARY</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">50 Copy-Paste AI Prompts</h3>
+                            <p class="text-slate-400 text-sm">Stop staring at a blank ChatGPT screen wondering what to type.</p>
+                        </div>
+                        <div class="text-xs bg-slate-900 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg self-start md:self-auto">
+                            Includes Hooks, Scripts, Visuals, CTAs & Repurposing
+                        </div>
+                    </div>
+
+                    <!-- Interactive Prompt Copy Box -->
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 relative">
+                        <div class="text-xs text-slate-500 uppercase font-bold mb-2">Sample Prompt Preview:</div>
+                        <p class="text-xs sm:text-sm font-mono text-emerald-300 leading-relaxed pr-20">
+                            "Act as a direct-response video scriptwriter. Write 3 scroll-stopping 3-second opening hooks for a video ad promoting [YOUR PRODUCT NAME] that solves [PRIMARY PAIN POINT] for [TARGET AUDIENCE]."
+                        </p>
+                        <button onclick="copySamplePrompt(this)" class="absolute top-4 right-4 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 shadow">
+                            <i class="fa-regular fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 04 — 10 Video Ad Structures -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+                    <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">04 / FRAMEWORKS</span>
+                    <h3 class="text-2xl font-bold text-white mt-1 mb-2">10 High-Converting Video Ad Structures</h3>
+                    <p class="text-slate-400 text-sm mb-6">Pick a structure, plug in your product details, and generate your video.</p>
+
+                    <!-- Structure Interactive Tabs -->
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="space-y-1.5 max-h-60 overflow-y-auto pr-2" id="structure-tabs">
+                            <button onclick="switchStructure(0)" class="struct-btn active w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-indigo-600 border-indigo-500 text-white">01. Problem → Agitate → Solution</button>
+                            <button onclick="switchStructure(1)" class="struct-btn w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">02. Before / After Transformation</button>
+                            <button onclick="switchStructure(2)" class="struct-btn w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">03. Myth vs. Fact</button>
+                            <button onclick="switchStructure(3)" class="struct-btn w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">04. UGC Testimonial Simulation</button>
+                            <button onclick="switchStructure(4)" class="struct-btn w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">05. Founder Story / Behind The Scenes</button>
+                            <button onclick="switchStructure(5)" class="struct-btn w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800">06. 3-Point Listicle</button>
+                        </div>
+                        <div class="md:col-span-2 bg-slate-950 p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div id="struct-title" class="text-base font-bold text-white mb-2">01. Problem → Agitate → Solution</div>
+                                <div id="struct-desc" class="text-xs text-slate-300 leading-relaxed">
+                                    Opens with a painful problem your target audience faces, amplifies the frustration, then reveals your product as the ultimate, effortless solution.
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-900 flex items-center justify-between text-[11px] text-slate-500">
+                                <span>Includes script blueprint + visual scene suggestions</span>
+                                <span class="text-emerald-400 font-semibold">Included in Kit</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Item 06: First Video Challenge (INTERACTIVE TIMER) -->
-                <div id="challenge" class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex items-start gap-4">
-                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">06</span>
-                        <div class="w-full">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                                <h3 class="text-xl font-bold text-white">First Video Challenge (30-Min Sprint)</h3>
-                                <span class="bg-amber-500/10 text-amber-400 text-xs px-2.5 py-1 rounded-full font-semibold border border-amber-500/20 self-start sm:self-auto">Action Challenge</span>
-                            </div>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                                Don't just read the guide. Make your first video! Set a 30-minute timer and follow the exact challenge timeline. Objective: <em>Finish the video, not make it perfect.</em>
-                            </p>
-
-                            <!-- Interactive Challenge Timeline -->
-                            <div class="space-y-2 mb-6">
-                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
-                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">0–5 min</span>
-                                    <span class="text-slate-200 font-medium">Generate your AI script & opening hook</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
-                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">5–10 min</span>
-                                    <span class="text-slate-200 font-medium">Generate realistic AI voiceover</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
-                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">10–20 min</span>
-                                    <span class="text-slate-200 font-medium">Gather product visuals and AI scene clips</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
-                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">20–27 min</span>
-                                    <span class="text-slate-200 font-medium">Assemble your video timeline</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
-                                    <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">27–30 min</span>
-                                    <span class="text-slate-200 font-medium">Auto-captions + CTA + Export</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 07: Video Quality Checklist (INTERACTIVE CHECKLIST) -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 glass-card-hover transition-all">
-                    <div class="flex items-start gap-4">
-                        <span class="text-3xl sm:text-4xl font-black text-indigo-500/80">07</span>
-                        <div class="w-full">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white">Video Quality Checklist</h3>
-                                <span id="checklist-score" class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">0/6 Passed</span>
-                            </div>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Before publishing your video ad, quickly verify it against these 6 critical conversion factors:
-                            </p>
-
-                            <!-- Interactive Checkbox List -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
-                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
-                                    <span>✓ Is the hook scroll-stopping?</span>
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
-                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
-                                    <span>✓ Is the voiceover audio clear?</span>
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
-                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
-                                    <span>✓ Do visuals match the message?</span>
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
-                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
-                                    <span>✓ Is the editing pacing fast?</span>
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
-                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
-                                    <span>✓ Are auto-captions readable?</span>
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3 bg-slate-950 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700 transition">
-                                    <input type="checkbox" onchange="updateChecklist()" class="chk-item rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
-                                    <span>✓ Is the CTA single & clear?</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- VALUE STACK / WHY ₹499 IS A NO-BRAINER -->
-    <section class="py-16 bg-slate-900/40 border-y border-slate-800 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-6">
-                Why Pay ₹15,000/Mo when you can do it yourself in 30 Mins?
-            </h2>
-
-            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 max-w-2xl mx-auto mb-8 text-left">
-                <div class="space-y-3 text-sm">
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">01. 30-Minute AI Video System</span>
-                        <span class="text-slate-400 font-mono">Value: ₹1,500</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">02. AI Video Playbook</span>
-                        <span class="text-slate-400 font-mono">Value: ₹999</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">03. 50 Copy-Paste AI Prompts</span>
-                        <span class="text-slate-400 font-mono">Value: ₹1,200</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">04. 10 Video Ad Frameworks</span>
-                        <span class="text-slate-400 font-mono">Value: ₹1,500</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">05. Product-to-Video Worksheet</span>
-                        <span class="text-slate-400 font-mono">Value: ₹500</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">06. 30-Min First Video Challenge</span>
-                        <span class="text-slate-400 font-mono">Value: ₹800</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
-                        <span class="text-slate-300">07. Pre-Launch Quality Checklist</span>
-                        <span class="text-slate-400 font-mono">Value: ₹499</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-3 text-base font-bold text-white">
-                        <span>Total Real Value</span>
-                        <span class="text-slate-400 line-through font-mono">₹6,998</span>
-                    </div>
-                </div>
-
-                <div class="mt-6 pt-6 border-t border-indigo-500/30 flex items-center justify-between bg-indigo-950/40 p-4 rounded-xl">
+                <!-- 05 — Product-to-Video Worksheet -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 grid md:grid-cols-2 gap-6 items-center">
                     <div>
-                        <div class="text-xs text-indigo-300 uppercase font-bold tracking-wider">Today's Launch Price</div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white">₹499 <span class="text-xs font-normal text-slate-400">(One-Time)</span></div>
+                        <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">05 / WORKSHEET</span>
+                        <h3 class="text-2xl font-bold text-white mt-1 mb-3">Product-to-Video Worksheet</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Fill it out once to clarify who your ad is for, what problem it eliminates, and what action your viewer should take next.
+                        </p>
+                        <div class="text-xs text-slate-300 space-y-1.5">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-dot text-emerald-400 text-[10px]"></i> Identifies dream customer profile</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-dot text-emerald-400 text-[10px]"></i> Pinpoints core emotional offer</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-dot text-emerald-400 text-[10px]"></i> Generates instant script inputs</div>
+                        </div>
                     </div>
-                    <a href="#checkout-section" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-lg shadow-lg shadow-emerald-500/20 transition inline-block text-center">
-                        GET INSTANT ACCESS
-                    </a>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
+                        <div class="text-xs text-slate-400 font-bold uppercase">Worksheet Questions:</div>
+                        <div class="bg-slate-900 p-2.5 rounded text-xs text-slate-300 border border-slate-800">1. Who is your target audience?</div>
+                        <div class="bg-slate-900 p-2.5 rounded text-xs text-slate-300 border border-slate-800">2. What major problem does your product solve?</div>
+                        <div class="bg-slate-900 p-2.5 rounded text-xs text-slate-300 border border-slate-800">3. What proof or transformation do you have?</div>
+                    </div>
                 </div>
+
+                <!-- 06 — First Video Challenge -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 bg-gradient-to-r from-indigo-950/30 via-slate-900 to-slate-900">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                        <div>
+                            <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase">06 / SPRINT CHALLENGE</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">The 30-Minute First Video Challenge</h3>
+                            <p class="text-slate-400 text-sm">Don't just read the guide—make your first video immediately.</p>
+                        </div>
+                        <a href="https://superprofile.bio/vp/ai-video-kit" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow transition inline-block text-center self-start md:self-auto">
+                            Get Access & Start Challenge
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <div class="text-emerald-400 font-bold text-sm">0–5 Min</div>
+                            <div class="text-[11px] text-slate-300 mt-1">Generate Script</div>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <div class="text-emerald-400 font-bold text-sm">5–10 Min</div>
+                            <div class="text-[11px] text-slate-300 mt-1">Generate Voiceover</div>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <div class="text-emerald-400 font-bold text-sm">10–20 Min</div>
+                            <div class="text-[11px] text-slate-300 mt-1">Gather Visuals</div>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <div class="text-emerald-400 font-bold text-sm">20–27 Min</div>
+                            <div class="text-[11px] text-slate-300 mt-1">Assemble Video</div>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800 col-span-2 sm:col-span-1">
+                            <div class="text-emerald-400 font-bold text-sm">27–30 Min</div>
+                            <div class="text-[11px] text-slate-300 mt-1">Captions + Export</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07 — Video Quality Checklist -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">07 / CHECKLIST</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">Pre-Launch Quality Checklist</h3>
+                        </div>
+                        <div id="checklist-score" class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                            0/6 Passed
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                        <label class="flex items-center gap-3 bg-slate-950 p-3 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700">
+                            <input type="checkbox" onchange="updateChecklist()" class="chk-item accent-emerald-500 w-4 h-4 rounded">
+                            <span class="text-slate-300">✓ Is the opening hook strong in the first 3s?</span>
+                        </label>
+                        <label class="flex items-center gap-3 bg-slate-950 p-3 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700">
+                            <input type="checkbox" onchange="updateChecklist()" class="chk-item accent-emerald-500 w-4 h-4 rounded">
+                            <span class="text-slate-300">✓ Is the voiceover clear and audible?</span>
+                        </label>
+                        <label class="flex items-center gap-3 bg-slate-950 p-3 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700">
+                            <input type="checkbox" onchange="updateChecklist()" class="chk-item accent-emerald-500 w-4 h-4 rounded">
+                            <span class="text-slate-300">✓ Do visuals match the voiceover script?</span>
+                        </label>
+                        <label class="flex items-center gap-3 bg-slate-950 p-3 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700">
+                            <input type="checkbox" onchange="updateChecklist()" class="chk-item accent-emerald-500 w-4 h-4 rounded">
+                            <span class="text-slate-300">✓ Is the pacing fast enough for mobile?</span>
+                        </label>
+                        <label class="flex items-center gap-3 bg-slate-950 p-3 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700">
+                            <input type="checkbox" onchange="updateChecklist()" class="chk-item accent-emerald-500 w-4 h-4 rounded">
+                            <span class="text-slate-300">✓ Are auto-captions accurate and readable?</span>
+                        </label>
+                        <label class="flex items-center gap-3 bg-slate-950 p-3 rounded-lg border border-slate-800 cursor-pointer hover:border-slate-700">
+                            <input type="checkbox" onchange="updateChecklist()" class="chk-item accent-emerald-500 w-4 h-4 rounded">
+                            <span class="text-slate-300">✓ Is there a clear Call-To-Action at the end?</span>
+                        </label>
+                    </div>
+                </div>
+
             </div>
 
         </div>
     </section>
 
-    <!-- FAQ ACCORDION SECTION -->
-    <section id="faq" class="py-16 md:py-24 relative">
+    <!-- FAQ SECTION -->
+    <section class="py-16 md:py-20 bg-slate-950 border-t border-slate-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-indigo-400 text-xs font-extrabold uppercase tracking-widest block mb-2">CLEAR YOUR DOUBTS</span>
-                <h2 class="text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">Frequently Asked Questions</h2>
+                <p class="text-slate-400 text-sm">Got questions before getting started? We've got answers.</p>
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
-                        <span>Do I need paid AI tools to use this kit?</span>
-                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white text-sm sm:text-base flex justify-between items-center">
+                        <span>Do I need paid AI software to use this kit?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
                     </button>
-                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
-                        No! The kit is specially designed to work with free and freemium AI tools (like ChatGPT, Claude, CapCut, and free AI image/voice generators). You do not need expensive subscriptions to get started.
+                    <div class="p-5 pt-0 text-xs sm:text-sm text-slate-400 hidden border-t border-slate-800/50">
+                        No! The kit is specifically structured around free and freemium AI tools (like ChatGPT, CapCut, and free voice generators) so you can get started with zero additional software cost.
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
-                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
-                        <span>I have never edited a video before. Can I really do this?</span>
-                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white text-sm sm:text-base flex justify-between items-center">
+                        <span>How do I get access after paying ₹499?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
                     </button>
-                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
-                        Yes, 100%. This kit was built specifically for non-editors. The step-by-step workflow handles all the technical thinking. If you know how to copy and paste text into AI tools, you can easily create video ads.
+                    <div class="p-5 pt-0 text-xs sm:text-sm text-slate-400 hidden border-t border-slate-800/50">
+                        Immediately after your payment is completed on Superprofile, you will receive instant digital access to all playbooks, prompt files, and worksheets directly on your screen and via email.
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
-                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
-                        <span>How quickly will I receive access after payment?</span>
-                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white text-sm sm:text-base flex justify-between items-center">
+                        <span>Is this suitable for absolute beginners?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
                     </button>
-                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
-                        Immediately! As soon as your payment of ₹499 is completed, you will receive instant digital access to the complete kit, prompts, playbook, templates, and worksheets directly in your browser and email.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-semibold text-white flex justify-between items-center gap-4 hover:bg-slate-900/50 transition">
-                        <span>Is this a recurring subscription?</span>
-                        <i class="fa-solid fa-chevron-down text-indigo-400 text-sm transition-transform duration-200"></i>
-                    </button>
-                    <div class="faq-ans hidden p-5 pt-0 text-sm text-slate-300 border-t border-slate-800/50 leading-relaxed">
-                        No. It is a one-time payment of ₹499 for full lifetime access. No hidden charges or recurring monthly fees.
+                    <div class="p-5 pt-0 text-xs sm:text-sm text-slate-400 hidden border-t border-slate-800/50">
+                        Yes! You don't need any prior video editing or AI prompting experience. Everything is explained in plain, simple English with copy-paste templates.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INLINE CHECKOUT & FINAL CTA SECTION -->
-    <section id="checkout-section" class="py-16 md:py-20 relative overflow-hidden bg-gradient-to-b from-slate-950 via-indigo-950/40 to-slate-950 border-t border-slate-800">
+    <!-- FINAL CTA SECTION -->
+    <section class="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-slate-950 via-indigo-950/40 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
                 Stop Overthinking Video Ads. <br><span class="gradient-text">Start Creating Them In 30 Minutes.</span>
@@ -638,46 +481,30 @@
                 Get instant access to the exact prompts, frameworks, and workflows needed to generate high-converting product videos today.
             </p>
 
-            <div class="glass-card bg-slate-900 border border-slate-700 p-6 sm:p-8 rounded-2xl max-w-md mx-auto text-left relative shadow-2xl">
-                <div class="text-center mb-6">
-                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3 text-xl border border-emerald-500/20">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Complete Your Order</h3>
-                    <p class="text-xs text-slate-400">Instant access to the complete AI Video Ad Kit</p>
+            <div class="glass-card bg-slate-900 border border-slate-700 p-6 sm:p-8 rounded-2xl max-w-md mx-auto text-center relative shadow-2xl glow-effect">
+                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3 text-xl border border-emerald-500/20">
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
+                <h3 class="text-2xl font-bold text-white mb-1">Get Instant Access Now</h3>
+                <p class="text-xs text-slate-400 mb-6">Complete AI Video Ad Kit — Lifetime Access for ₹499</p>
 
                 <!-- Order Summary -->
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-5">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6 text-left">
                     <div class="flex justify-between items-center text-sm font-semibold text-white mb-2">
-                        <span>AI Video Ad Kit (Lifetime)</span>
-                        <span>₹499</span>
+                        <span>AI Video Ad Kit (Worth <span class="line-through text-slate-500">₹1,999</span>)</span>
+                        <span class="text-emerald-400 font-bold text-base">₹499</span>
                     </div>
-                    <div class="text-xs text-slate-400 space-y-1">
+                    <div class="text-xs text-slate-400 space-y-1.5">
                         <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 50 Copy-Paste AI Prompts</div>
                         <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 10 Video Ad Frameworks</div>
                         <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 30-Min Challenge & Checklist</div>
                     </div>
                 </div>
 
-                <!-- Payment Form -->
-                <form id="payment-form" onsubmit="handlePayment(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-xs text-slate-300 font-medium mb-1">Your Full Name</label>
-                        <input type="text" required placeholder="John Doe" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-slate-300 font-medium mb-1">Email Address (For instant access link)</label>
-                        <input type="email" required placeholder="you@gmail.com" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
-                    </div>
-
-                    <div class="pt-2">
-                        <button type="submit" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-bolt"></i>
-                            <span>PAY ₹499 & GET INSTANT ACCESS</span>
-                        </button>
-                    </div>
-                </form>
+                <a href="https://superprofile.bio/vp/ai-video-kit" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base sm:text-lg rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center justify-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0">
+                    <i class="fa-solid fa-bolt text-yellow-300"></i>
+                    <span>GET THE AI VIDEO AD KIT NOW</span>
+                </a>
 
                 <div class="mt-4 text-center">
                     <span class="text-[10px] text-slate-500 uppercase font-medium tracking-wider">Supports UPI • GPay • PhonePe • Cards</span>
@@ -701,9 +528,9 @@
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md p-3 border-t border-slate-800 flex items-center justify-between gap-3 shadow-2xl">
         <div>
             <div class="text-[10px] text-slate-400 uppercase font-bold">AI Video Ad Kit</div>
-            <div class="text-lg font-black text-white">₹499 <span class="text-xs text-slate-500 line-through">₹2,999</span></div>
+            <div class="text-lg font-black text-white">₹499 <span class="text-xs text-slate-500 line-through">₹1,999</span></div>
         </div>
-        <a href="#checkout-section" class="flex-1 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/20 text-center flex items-center justify-center gap-2">
+        <a href="https://superprofile.bio/vp/ai-video-kit" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/20 text-center flex items-center justify-center gap-2">
             <span>GET ACCESS</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
@@ -716,7 +543,6 @@
     </div>
 
     <script>
-        // Tab data for 10 Video Ad Structures
         const structures = [
             {
                 title: "01. Problem → Agitate → Solution",
@@ -741,22 +567,6 @@
             {
                 title: "06. 3-Point Listicle",
                 desc: "Fast-paced video breaking down '3 Reasons Why [Product] is Going Viral This Week'."
-            },
-            {
-                title: "07. Day-in-the-Life Product Integration",
-                desc: "Demonstrates naturally how your product fits into a customer's daily routine without feeling like a hard pitch."
-            },
-            {
-                title: "08. Unboxing & First Impressions",
-                desc: "Captures the high-excitement tactile experience of receiving, opening, and using the product for the first time."
-            },
-            {
-                title: "09. Us vs. Them Comparison",
-                desc: "Side-by-side comparison chart or split video showing why your product beats traditional expensive alternatives."
-            },
-            {
-                title: "10. The Objection-Smash",
-                desc: "Systematically tackles the top 3 reasons someone might hesitate to buy and proves them wrong with visuals."
             }
         ];
 
@@ -764,9 +574,9 @@
             const tabs = document.querySelectorAll('#structure-tabs button');
             tabs.forEach((tab, i) => {
                 if (i === index) {
-                    tab.className = "struct-btn active p-2 text-xs rounded-lg border font-medium transition-all text-left bg-indigo-600 border-indigo-500 text-white";
+                    tab.className = "struct-btn active w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-indigo-600 border-indigo-500 text-white";
                 } else {
-                    tab.className = "struct-btn p-2 text-xs rounded-lg border font-medium transition-all text-left bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800";
+                    tab.className = "struct-btn w-full p-2.5 text-xs text-left rounded-lg border font-medium transition bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800";
                 }
             });
 
@@ -777,7 +587,6 @@
         function copySamplePrompt(btn) {
             const promptText = "Act as a direct-response video scriptwriter. Write 3 scroll-stopping 3-second opening hooks for a video ad promoting [YOUR PRODUCT NAME] that solves [PRIMARY PAIN POINT] for [TARGET AUDIENCE].";
             
-            // Clipboard fallback logic
             const tempInput = document.createElement("textarea");
             tempInput.value = promptText;
             document.body.appendChild(tempInput);
@@ -807,12 +616,6 @@
                 ans.classList.add('hidden');
                 icon.style.transform = 'rotate(0deg)';
             }
-        }
-
-        function handlePayment(e) {
-            e.preventDefault();
-            showToast("Order placed successfully! Access details sent to your email.");
-            e.target.reset();
         }
 
         function showToast(msg) {
